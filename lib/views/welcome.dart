@@ -18,9 +18,12 @@ class WelcomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  child: Image.asset('assets/images/logo.png'),
-                  height: 60,
+                Hero(
+                  tag: 'dash',
+                  child: Container(
+                    child: Image.asset('assets/images/logo.png'),
+                    height: 60,
+                  ),
                 ),
                 Text(
                   'Flash Msg',

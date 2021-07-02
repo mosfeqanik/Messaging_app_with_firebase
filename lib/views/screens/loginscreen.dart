@@ -14,9 +14,12 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              child: Image.asset('assets/images/logo.png'),
-              height: 200,
+            Hero(
+              tag: 'dash',
+              child: Container(
+                child: Image.asset('assets/images/logo.png'),
+                height: 200,
+              ),
             ),
             RoundTextField(hintString:'Enter your name'),
             SizedBox(height: 15,),
