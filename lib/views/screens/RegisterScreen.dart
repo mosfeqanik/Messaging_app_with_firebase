@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:messaging_app/views/common_widgets/Round_TextField.dart';
 import 'package:messaging_app/views/common_widgets/round_button.dart';
 
-class LoginScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +18,14 @@ class LoginScreen extends StatelessWidget {
               child: Image.asset('assets/images/logo.png'),
               height: 200,
             ),
-            RoundTextField(hintString:'Enter your name'),
+            RoundTextField(hintString: 'Enter your name'),
             SizedBox(height: 15,),
-            RoundTextField(hintString:'Enter your Password'),
+            RoundTextField(hintString: 'Enter your Password'),
             RoundButton(
-              title: 'Log in',
+              title: 'Sign Up',
               buttonColor: Colors.deepOrange,
               onPressedFunction: () {
-                print('login is working');
+                print('Sign Up is working');
               },
             )
           ],

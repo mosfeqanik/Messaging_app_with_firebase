@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class RoundButton extends StatelessWidget {
-  final Color buttoncolor ;
+  final Color buttonColor ;
   final String title  ;
-  final Function OnpressedFunction  ;
+  final Function onPressedFunction  ;
 
-  RoundButton ({@required this.OnpressedFunction,this.buttoncolor,this.title});
+  RoundButton ({@required this.onPressedFunction,this.buttonColor,this.title});
 
 
   @override
@@ -14,10 +14,10 @@ class RoundButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: Material(
         elevation: 5,
-        color: buttoncolor,
+        color: buttonColor,
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
-          onPressed: OnpressedFunction,
+          onPressed: onPressedFunction,
           minWidth: 200.0,
           height: 42.0,
           child: Text(

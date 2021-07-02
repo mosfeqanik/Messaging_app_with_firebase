@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:messaging_app/views/screens/RegisterScreen.dart';
 import 'package:messaging_app/views/screens/loginscreen.dart';
-
 import 'common_widgets/round_button.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -17,7 +17,6 @@ class WelcomePage extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
                   child: Image.asset('assets/images/logo.png'),
@@ -35,8 +34,8 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: 15),
             RoundButton(
               title: 'Log In',
-              buttoncolor: Colors.lightBlueAccent,
-              OnpressedFunction: () {
+              buttonColor: Colors.lightBlueAccent,
+              onPressedFunction: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return LoginScreen();
                 }));
@@ -44,10 +43,10 @@ class WelcomePage extends StatelessWidget {
             ),
             RoundButton(
               title: 'Register',
-              buttoncolor: Colors.deepPurple,
-              OnpressedFunction: () {
+              buttonColor: Colors.deepOrange,
+              onPressedFunction: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return LoginScreen();
+                  return RegisterScreen();
                 }));
               },
             )

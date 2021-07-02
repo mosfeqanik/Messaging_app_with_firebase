@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:messaging_app/views/welcome.dart';
 
-void main()=> runApp(MyApp()) ;
-
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -10,15 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        textTheme: TextTheme(
-          bodyText1: TextStyle(
-            color: Colors.black54
-          )
-        )
-      ),
-      home:WelcomePage(),
+      theme: ThemeData.dark(),
+        home: WelcomePage(),
     );
   }
 }
-
