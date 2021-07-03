@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:messaging_app/views/common_widgets/Round_TextField.dart';
 import 'package:messaging_app/views/common_widgets/round_button.dart';
 
+import 'ChatScreen.dart';
+
 class RegisterScreen extends StatefulWidget {
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
@@ -60,10 +62,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       email: _emailEditingController.text,
                       password: _passwordEditingController.text);
                   if(newUser!=null){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return ChatScreen();
+                    }));
                   }
                 } catch (error) {
-                  print(error);
+                  print(error.toString());
                 }
 
 
