@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "594178040270",
+    "project_id": "msgchat-efc24",
+    "storage_bucket": "msgchat-efc24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594178040270:android:b464edbba86b0d65ca0b9f",
+        "android_client_info": {
+          "package_name": "com.example.messaging_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594178040270-b3uv97b1j1go5aq1d573k1s2ov4ttpsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVsnmB3BKOZc-qH991RABlL_QBxG8Qpso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594178040270-b3uv97b1j1go5aq1d573k1s2ov4ttpsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
