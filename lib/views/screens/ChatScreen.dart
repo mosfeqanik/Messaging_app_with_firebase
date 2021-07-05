@@ -19,6 +19,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     getCurrentUser();
+    messagesStream();
   }
 
   getCurrentUser() {
@@ -27,6 +28,15 @@ class _ChatScreenState extends State<ChatScreen> {
       _loggedinUser = user;
     }
   }
+
+  void messagesStream() async {
+    await for (var snapshot in _firebaseStore.collection('messages').snapshots()) {
+      for (var message in snapshot.docs) {
+        print(message.data());
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
