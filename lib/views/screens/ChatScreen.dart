@@ -169,10 +169,14 @@ class MessageStream extends StatelessWidget {
               );
               listMessagesWidget.add(messageWidget);
             }
+            print(
+              listMessagesWidget
+            );
             return Expanded(
               child: ListView(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 children: listMessagesWidget,
+
               ),
             );
           } else {
