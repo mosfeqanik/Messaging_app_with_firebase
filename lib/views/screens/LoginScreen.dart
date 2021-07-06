@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   textEditingController: _emailEditingController,
                   isObscure: false,
                   keyBoardTypeCheck: TextInputType.emailAddress,
-                  hintString: 'Enter your name'),
+                  hintString: 'Enter your Email'),
               SizedBox(
                 height: 15,
               ),
