@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:messaging_app/constants/Constants.dart';
 
+import 'LoginScreen.dart';
+
 final _firebaseStore = FirebaseFirestore.instance;
 User _loggedinUser;
 
@@ -73,6 +75,31 @@ class _ChatScreenState extends State<ChatScreen> {
                   fontSize: 10,
                   fontFamily: 'Poppins',
                   color: Colors.deepPurple),
+            )
+          ],
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('accountName'),
+              accountEmail: Text('accountEmail'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://cdn.clipart.email/93ce84c4f719bd9a234fb92ab331bec4_frisco-specialty-clinic-vail-health_480-480.png'
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('Logout'),
+              subtitle: Text('Sign out of this account'),
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => LoginScreen()), (
+                    route) => false);
+              },
             )
           ],
         ),
