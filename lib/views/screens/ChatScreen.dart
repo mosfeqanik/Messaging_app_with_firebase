@@ -44,16 +44,38 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
-        actions: [
-          IconButton(
-              onPressed: () {
-                _auth.signOut();
-                Navigator.pop(context);
-              },
-              icon: Icon(Icons.close))
-        ],
+        iconTheme: IconThemeData(color: Colors.deepPurple),
+        elevation: 0,
+        bottom: PreferredSize(
+          preferredSize: Size(25, 10),
+          child: Container(
+            child: LinearProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              backgroundColor: Colors.blue,
+            ),
+            constraints: BoxConstraints.expand(height: 1),
+          ),
+        ),
+        backgroundColor: Colors.white,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Converse',
+              style: TextStyle(
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  color: Colors.deepPurple),
+            ),
+            Text(
+              'By ABX xyz',
+              style: TextStyle(
+                  fontSize: 10,
+                  fontFamily: 'Poppins',
+                  color: Colors.deepPurple),
+            )
+          ],
+        ),
       ),
       body: SafeArea(
         child: Column(
@@ -169,9 +191,7 @@ class MessageStream extends StatelessWidget {
               );
               listMessagesWidget.add(messageWidget);
             }
-            print(
-              listMessagesWidget
-            );
+            ;
             return Expanded(
               child: ListView(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),

@@ -40,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Hero(
                 tag: 'dash',
                 child: Container(
-                  child: Image.asset('assets/images/logo.png'),
+                  child: Image.asset('assets/images/logo.jpg'),
                   height: 200,
                 ),
               ),

@@ -77,7 +77,7 @@ class _WelcomePageState extends State<WelcomePage>
                   Hero(
                     tag: 'dash',
                     child: Container(
-                      child: Image.asset('assets/images/logo.png'),
+                      child: Image.asset('assets/images/logo.jpg'),
                       height: 60,
                     ),
                   ),
