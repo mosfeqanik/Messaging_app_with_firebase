@@ -155,6 +155,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                         onPressed: () {},
                       )),
+                  SizedBox(width: 10,),
                   Container(
                       width: 32,
                       child: IconButton(
@@ -174,7 +175,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         color: Colors.white,
                         elevation: 3,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 8, top: 1, bottom: 1),
+                          padding: EdgeInsets.only(left: 10, top: 1, bottom: 1,),
                           child: TextField(
                             controller: textEditingController,
                             decoration: kMessageTextFieldDecoration,
