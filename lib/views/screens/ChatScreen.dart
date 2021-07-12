@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:edge_alert/edge_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class _ChatScreenState extends State<ChatScreen> {
   final _auth = FirebaseAuth.instance;
   String _messageText;
   TextEditingController textEditingController;
+  String email;
+  String username;
 
   @override
   void initState() {
@@ -27,11 +30,36 @@ class _ChatScreenState extends State<ChatScreen> {
     // messagesStream();
   }
 
-  getCurrentUser() {
-    final user = _auth.currentUser;
-    if (user != null) {
-      _loggedinUser = user;
+  void getCurrentUser() {
+    try {
+      final user = _auth.currentUser;
+      if (user != null) {
+        _loggedinUser = user;
+        setState(() {
+          username = _loggedinUser.displayName;
+          email = _loggedinUser.email;
+        });
+      }
+    } catch (error) {
+        EdgeAlert.show(context,
+        title:"something went Wrong",
+        description: error.toString(),
+        gravity: EdgeAlert.BOTTOM,
+        icon:Icons.error,
+        backgroundColor: Colors.deepPurple[100]);
     }
+  }
+
+  void saveMessage(String imageUrl) {
+    _firebaseStore.collection('messages').add({
+      'sender': 'username',
+      'text': _messageText,
+      'senderEmail': email,
+      'imageUrl': imageUrl,
+      'timestamp': DateTime
+          .now()
+          .microsecondsSinceEpoch
+    });
   }
 
   // void messagesStream() async {
@@ -169,6 +197,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   SizedBox(
                     width: 10,
                   ),
+                  //TextField
                   Expanded(
                       child: Material(
                         borderRadius: BorderRadius.circular(16),
@@ -191,6 +220,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     color: Colors.blue,
                     onPressed: (){
                       textEditingController.clear();
+                      saveMessage(null);
                     },
                     child: Padding(
                       padding: EdgeInsets.all(10),
@@ -200,8 +230,6 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                     ),
                   )
-
-
                 ],
               ),
             )
