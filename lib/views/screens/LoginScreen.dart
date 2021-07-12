@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     final user = _auth.signInWithEmailAndPassword(
                         email: _emailEditingController.text,
                         password: _passwordEditingController.text);
-                    if (user != null) {
+                    if (user != "" && user != null) {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return ChatScreen();

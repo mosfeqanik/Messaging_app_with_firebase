@@ -68,7 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     final newUser = _auth.createUserWithEmailAndPassword(
                         email: _emailEditingController.text,
                         password: _passwordEditingController.text);
-                    if(newUser!=null){
+                    if(newUser != "" && newUser != null){
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
                         return ChatScreen();
                       }));

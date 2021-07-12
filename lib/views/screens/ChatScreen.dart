@@ -107,10 +107,9 @@ class _ChatScreenState extends State<ChatScreen> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             MessageStream(),
-            Container(
+           /* Container(
               decoration: kMessageContainerDecoration,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,7 +139,71 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ],
               ),
-            ),
+            ),*/
+            Container(
+              padding: EdgeInsets.only(bottom: 12, top: 0),
+              decoration: kMessageContainerDecoration,
+              child: Row(
+                children: [
+                  Container(
+                      width: 32,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.image,
+                          color: Colors.blue,
+                          size: 30,
+                        ),
+                        onPressed: () {},
+                      )),
+                  Container(
+                      width: 32,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.camera_alt,
+                          color: Colors.blue,
+                          size: 30,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                      child: Material(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white,
+                        elevation: 3,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 8, top: 1, bottom: 1),
+                          child: TextField(
+                            controller: textEditingController,
+                            decoration: kMessageTextFieldDecoration,
+                            onChanged: (value) {
+                              _messageText = value;
+                            },
+                          ),
+                        ),
+                      )
+                  ),
+                  MaterialButton(
+                    shape: CircleBorder(),
+                    color: Colors.blue,
+                    onPressed: (){
+                      textEditingController.clear();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Icon(
+                        Icons.send,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+
+
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -221,9 +284,9 @@ class MessageStream extends StatelessWidget {
             ;
             return Expanded(
               child: ListView(
+                reverse: true,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 children: listMessagesWidget,
-
               ),
             );
           } else {
